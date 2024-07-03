@@ -1,0 +1,99 @@
+/*Created by Christian Niro*/
+
+/* Stile principale del calendario */
+.calendar {
+    border: 1px solid #ccc;
+    /* Bordo grigio chiaro */
+    padding: 10px;
+    /* Spaziatura interna */
+}
+
+/* Stile dell'intestazione del calendario */
+.calendar-header {
+    display: flex;
+    /* Utilizza flexbox per l'allineamento */
+    justify-content: space-between;
+    /* Spazia gli elementi uniformemente */
+    align-items: center;
+    /* Centra gli elementi verticalmente */
+    margin-bottom: 10px;
+    /* Margine inferiore */
+}
+
+/* Stile per i nomi dei giorni e i giorni stessi */
+.day-names,
+.days {
+    display: flex;
+    /* Utilizza flexbox per l'allineamento */
+    flex-wrap: wrap;
+    /* Permette agli elementi di andare a capo */
+}
+
+/* Stile comune per i div all'interno di .day-names e .days */
+.day-names div,
+.days div {
+    flex: 1 0 calc(100% / 7);
+    /* Ogni elemento occupa 1/7 dello spazio disponibile */
+    text-align: center;
+    /* Testo centrato */
+    min-height: 50px;
+    /* Altezza minima */
+    border: 1px solid #eee;
+    /* Bordo molto chiaro */
+    padding: 5px;
+    /* Spaziatura interna */
+    box-sizing: border-box;
+    /* Include padding e bordo nel calcolo della larghezza/altezza */
+    min-width: 0;
+    /* Larghezza minima */
+    max-width: calc(100% / 7);
+    /* Larghezza massima */
+    overflow: hidden;
+    /* Nasconde il contenuto che eccede */
+}
+
+/* Stile per i giorni vuoti (non appartenenti al mese corrente) */
+.day-empty {
+    background-color: #f0f0f0;
+    /* Sfondo grigio molto chiaro */
+}
+
+/* Stile per il giorno al passaggio del mouse */
+.day:hover {
+    cursor: pointer;
+    /* Cambia il cursore in un puntatore */
+    background-color: #e9e9e9;
+    /* Sfondo leggermente più scuro */
+}
+
+/* Stile per il giorno quando è premuto */
+.day:active {
+    background-color: #ddd;
+    /* Sfondo grigio */
+}
+
+/* Stile per il giorno selezionato */
+.day.selected {
+    background-color: rgb(68, 255, 0);
+    /* Sfondo verde */
+    border: 2px solid #44ff00;
+    /* Bordo verde più scuro */
+}
+
+/* Stile per il giorno corrente */
+.today {
+    background-color: orange;
+    /* Sfondo arancione */
+    border: 2px solid #ff8c00;
+    /* Bordo arancione scuro */
+}
+
+/* Stile per i giorni passati */
+.day.past {
+    background-color: #e0e0e0;
+    /* Sfondo grigio */
+    color: #a0a0a0;
+    /* Testo grigio chiaro */
+    pointer-events: none;
+    /* Disabilita gli eventi del mouse */
+}

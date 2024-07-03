@@ -1,0 +1,42 @@
+<!-- 
+ @Author: Christian Niro
+ @Description: Html for Calendar Component
+ -->
+ <template>
+    <!-- Componente card di Lightning con titolo e icona -->
+    <lightning-card title="Calendario" icon-name="standard:event">
+        <!-- Contenitore principale del calendario -->
+        <div class="calendar">
+            <!-- Intestazione del calendario con pulsanti per navigare tra i mesi -->
+            <div class="calendar-header">
+                <!-- Pulsante per andare al mese precedente -->
+                <button class="prev-month" onclick={prevMonth}>←</button>
+                <!-- Visualizza il mese e l'anno corrente -->
+                <h2>{monthYear}</h2>
+                <!-- Pulsante per andare al mese successivo -->
+                <button class="next-month" onclick={nextMonth}>→</button>
+            </div>
+            <!-- Nomi dei giorni della settimana -->
+            <div class="day-names">
+                <div>Lun</div> <!-- Lunedì -->
+                <div>Mar</div> <!-- Martedì -->
+                <div>Mer</div> <!-- Mercoledì -->
+                <div>Gio</div> <!-- Giovedì -->
+                <div>Ven</div> <!-- Venerdì -->
+                <div>Sab</div> <!-- Sabato -->
+                <div>Dom</div> <!-- Domenica -->
+            </div>
+            
+            <!-- Contenitore per i giorni del mese -->
+            <div class="days">
+                <!-- Itera su ogni giorno processato per visualizzarlo -->
+                <template for:each={processedDays} for:item="day">
+                    <!-- Div per ogni giorno con classe e data specifiche -->
+                    <div key={day.id} class={day.cssClass} data-date={day.date}>
+                        {day.day} <!-- Visualizza il numero del giorno -->
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
